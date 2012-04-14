@@ -1,0 +1,33 @@
+SlideSlope
+==========
+
+SlideSlope consists of two shell scripts to download presentations from
+slideshare, and convert them to a series of .png files.
+
+It requires wget and gnash. I've only tested it under Ubuntu Linux
+but I think it should work under most Linux/BSD distributions. Maybe
+also under OSX or Windows with Cygwin, if you're really lucky :)
+
+Patches are welcome. Send them to samuel@slbdata.se or make a pull request
+to on GitHub: https://github.com/samuellb/slideslope/
+
+Sometimes the resulting .png files get very small. Use "file *" to look
+for such files and run swfs2png again in a separate directory until you
+have all slides.
+
+Usage
+-----
+
+Download the .swf files:
+
+  ./slideslope http://www.slideshare.net/some/thing
+
+Convert them to .png:
+
+  ./swfs2png something-123-bla456-slide-
+
+The parameter should be the common beginning of the names of the downloaded
+.swf files, up to but not including the slide number. If you use Bash as
+your shell you can just press <tab> and it will autocomplete the common
+beginning of the file names.
+
